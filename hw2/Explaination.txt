@@ -1,0 +1,15 @@
+Check the screenshots.pdf for reference. All screenshots has been saved in the file for better access.
+
+1. Screenshot of invoking the figlet function. Running on Qemu VM terminal using faas-cli. Got a cool reponse body.
+
+2. Screenshot of running $sudo journalctl -u faasd --lines 40. Running on Qemu VM terminal.
+
+3. Screenshot of OpenFaaS gateway AFTER deploying figlet, slack-handler and slack-interactive functions. The deployed functions names are located on the left navigation bar. Running on http://localhost:8080/ui. Used login username and password to access.
+
+4. screenshot of invoking slack-request function using FaaS CLI. Got a Json response. Running on Qemu VM terminal.
+
+5. screenshot of invoking slack-interactive function using FaaS CLI. Got a Json response. Running on Qemu VM terminal.
+
+6. screenshot of invoking slack-request function using Curl. Got a Json response. Used Mac terminal to run the Curl command.
+
+7. screenshot of invoking slack-interactive function using Curl. Got a Json response. Used Mac terminal to run the Curl command.

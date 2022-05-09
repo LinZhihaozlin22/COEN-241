@@ -1,0 +1,36 @@
+1. What is the command to invoke the slack-request function?
+    a. Via Curl
+        $ curl http://<YOUR-PUBLIC-IP>:8080/function/slack-request --data <your_input_string>
+    b. Via faas-cli
+        $ echo <your_input_string> | faas-cli invoke slack-request
+
+replace <YOUR-PUBLIC-IP> to your IP. For me, I use "localhost" or "127.0.0.1"
+replace <your_input_string> to string, I used 'hello' to invoke the function
+
+
+2. What is the output you see when you invoke the slack-request function?
+{"text": "Serverless Message", "attachments": [{"fields": [{"short": true, "value": "100", "title": "Amazing Level"}], "author_icon": "", "image_url": "https://www.scu.edu/media/offices/umc/scu-brand-guidelines/visual-identity-amp-photography/visual-identity-toolkit/logos-amp-seals/Mission-Dont3.png", "author_name": "Zhihao Lin", "title": "The Awesome world of Cloud Computing! COEN 241"}, {"text": "COEN 241 is the most awesome class ever!.", "title": "About COEN 241"}, {"title": "Would you recommend COEN 241 to your friends?", "color": "#3AA3E3", "actions": [{"text": "Of Course!", "type": "button", "name": "recommend", "value": "recommend"}, {"text": "Most Definitely!", "type": "button", "name": "definitely", "value": "definitely"}], "callback_id": "response123", "fallback": "Would you recommend COEN 241 to your friends?", "attachment_type": "default"}]}
+
+
+3. What is the command to invoke the slack-interactive function?
+    a. Via curl
+        $ curl http://<YOUR-PUBLIC-IP>:8080/function/slack-interactive --data <Your_input_json>
+    b. Via faas-cli
+        $ echo <Your_input_json> | faas-cli invoke slack-interactive
+
+replace <YOUR-PUBLIC-IP> to your IP. For me, I use "localhost" or "127.0.0.1"
+replace <Your_input_json> to a json format string, I used '{"text":"text"}' to invoke the function
+
+
+4. What is the output you see when you invoke the slack-interactive function?
+{"attachments": [{"footer": "Slack Apps built on OpenFaas", "author_link": "https://github.com/LinZhihaozlin22/COEN-241", "color": "#36a64f", "text": "Head over to COEN 241", "title": "COEN 241", "ts": 123456789, "author_name": "", "title_link": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/course-descriptions/", "image_url": "https://www.scu.edu/media/offices/umc/scu-brand-guidelines/visual-identity-amp-photography/visual-identity-toolkit/logos-amp-seals/Mission-Dont3.png", "response_type": "ephemeral", "replace_original": true, "footer_icon": "https://a.slack-edge.com/45901/marketing/img/_rebrand/meta/slack_hash_256.png", "pretext": "Ahh yeah! Great choice, COEN 241 is absolutely amazing!", "fallback": "Required plain-text summary of the attachment.", "thumb_url": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/course-descriptions/", "author_icon": "https://github.com/LinZhihaozlin22.png"}]}
+
+
+5. How would you pass different arguments to the functions?
+As the commands stated above, to pass different arguments:
+    for slack-request: replace the <your_input_string> with different arguments
+    for slack-interactive: replace the <Your_input_json> with different arguments
+
+
+6. How would you change the slack-interactive function to react to different inputs?
+In order to let slack-interactive function to react to different inputs, I will get the request which is "req" in the function and write some condition functions to make different response base on the inputs, such as checking the input length and put a new peer of json data in response with the length.
