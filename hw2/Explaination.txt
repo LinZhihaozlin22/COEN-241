@@ -13,3 +13,5 @@ Check the screenshots.pdf for reference. All screenshots has been saved in the f
 6. screenshot of invoking slack-request function using Curl. Got a Json response. Used Mac terminal to run the Curl command.
 
 7. screenshot of invoking slack-interactive function using Curl. Got a Json response. Used Mac terminal to run the Curl command.
+
+Extra credit: Screenshot of invoking slack-request (top response) and then invoking slack-interactive (bottom response) inside Slack. The app name: COEN241-HW2. Steps: First used command "/coen241" to invoke slack-request function and got response, then click interactive button to invoke slack-interactive function and got another response.
